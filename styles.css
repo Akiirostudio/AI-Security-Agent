@@ -52,6 +52,32 @@ section#gallery {
     background-color: #f5f5dc;
 }
 
+section#testimonials {
+    background-color: #e6e6fa;
+}
+
+section#blog {
+    background-color: #fff5ee;
+}
+
+section#faq {
+    background-color: #f5f5f5;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    border-radius: 50%;
+}
+
 .slideshow-container {
     position: relative;
     max-width: 1000px;
@@ -131,7 +157,8 @@ form label {
 }
 
 form input[type="text"],
-form input[type="email"] {
+form input[type="email"],
+form textarea {
     padding: 0.5em;
     margin-bottom: 1em;
     border: 1px solid #ccc;
@@ -150,4 +177,47 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #555;
+}
+
+.testimonial {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.blog-post {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+}
+
+.blog-post h3 {
+    margin: 0;
+}
+
+.blog-post p {
+    margin: 0.5em 0;
+}
+
+.blog-post a {
+    color: #333;
+    text-decoration: none;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+}
+
+.faq-item h3 {
+    margin: 0;
+}
+
+.faq-item p {
+    margin: 0.5em 0;
 }
