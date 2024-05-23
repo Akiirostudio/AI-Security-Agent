@@ -1,30 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        card.addEventListener('click', function() {
-            alert(`You clicked on ${this.querySelector('p').innerText}`);
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.card');
 
-    cards.forEach(card => {
-        card.addEventListener('click', function() {
-            alert(`You clicked on ${this.querySelector('p').innerText}`);
-        });
-    });
+// Slideshow functionality
+let slideIndex = 0;
+showSlides();
 
-    const form = document.getElementById('interaction-form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const userInput = document.getElementById('user-input').value;
+function showSlides() {
+    let slides = document.querySelectorAll('.mySlides');
+    slides.forEach(slide => slide.style.display = 'none');
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
 
-        // Placeholder for AI API interaction
-        const response = `You asked: "${userInput}". Here's your guidance: Stay positive and trust the journey.`;
-
-        const responseContainer = document.getElementById('interaction-response');
-        responseContainer.innerHTML = `<p>${response}</p>`;
-    });
-});
+function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex < 1) { slideIndex = slides.length }
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    showSlides(slideIndex);
+}
