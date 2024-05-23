@@ -3,71 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellar Guidance</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Enhanced Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo-bar">
-            <img src="images/logo.webp" alt="Stellar Guidance Logo" class="logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Beauty</a></li>
-                <li><a href="#">Culture</a></li>
-                <li><a href="#">News & Politics</a></li>
-                <li><a href="#">Horoscopes</a></li>
-            </ul>
-        </nav>
-        <h1>Daily Horoscopes 2024</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Welcome to Our Enhanced Website</h1>
     </header>
 
-    <main>
-        <section id="horoscopes">
-            <div class="card">
-                <img src="images/taurus.webp" alt="Taurus Daily Horoscope">
-                <p>Taurus Daily Horoscope</p>
-            </div>
-            <div class="card">
-                <img src="images/aries.webp" alt="Aries Daily Horoscope">
-                <p>Aries Daily Horoscope</p>
-            </div>
-            <div class="card">
-                <img src="images/pisces.webp" alt="Pisces Daily Horoscope">
-                <p>Pisces Daily Horoscope</p>
-            </div>
-            <div class="card">
-                <img src="images/aquarius.webp" alt="Aquarius Daily Horoscope">
-                <p>Aquarius Daily Horoscope</p>
-            </div>
-            <div class="card">
-                <img src="images/capricorn.webp" alt="Capricorn Daily Horoscope">
-                <p>Capricorn Daily Horoscope</p>
-            </div>
-            <div class="card">
-                <img src="images/virgo.webp" alt="Virgo Daily Horoscope">
-                <p>Virgo Daily Horoscope</p>
-            </div>
-        </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We provide the best services to our customers.</p>
+    </section>
 
-        <section id="spiritual-interactions">
-            <h2>AI Spiritual Interactions</h2>
-            <form id="interaction-form">
-                <textarea id="user-input" placeholder="Enter your thoughts or questions..."></textarea>
-                <button type="submit">Get Guidance</button>
-            </form>
-            <div id="interaction-response">
-                <!-- AI response will be displayed here -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Discover the variety of services we offer.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="capricorn.webp" style="width:100%">
+                <div class="text">Caption for Image 1</div>
             </div>
-        </section>
-    </main>
+
+            <div class="mySlides fade">
+                <img src="pisces.webp" style="width:100%">
+                <div class="text">Caption for Image 2</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="taurus.webp" style="width:100%">
+                <div class="text">Caption for Image 3</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us via the contact form below.</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <input type="submit" value="Submit">
+        </form>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Stellar Guidance. All rights reserved.</p>
+        <p>&copy; 2024 Enhanced Website. All rights reserved.</p>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
