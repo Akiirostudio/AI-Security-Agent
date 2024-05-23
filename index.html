@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stellar Guidance</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <div class="logo-bar">
+            <img src="images/logo.webp" alt="Stellar Guidance Logo" class="logo">
+        </div>
         <nav>
             <ul>
-                <li><a href="#">FASHION</a></li>
-                <li><a href="#">BEAUTY</a></li>
-                <li><a href="#">CULTURE</a></li>
-                <li><a href="#">NEWS & POLITICS</a></li>
-                <li><a href="#">HOROSCOPES</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Beauty</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">News & Politics</a></li>
+                <li><a href="#">Horoscopes</a></li>
             </ul>
         </nav>
-        <h1>DAILY HOROSCOPES 2024</h1>
+        <h1>Daily Horoscopes 2024</h1>
     </header>
 
     <main>
@@ -48,7 +51,22 @@
                 <p>Virgo Daily Horoscope</p>
             </div>
         </section>
+
+        <section id="spiritual-interactions">
+            <h2>AI Spiritual Interactions</h2>
+            <form id="interaction-form">
+                <textarea id="user-input" placeholder="Enter your thoughts or questions..."></textarea>
+                <button type="submit">Get Guidance</button>
+            </form>
+            <div id="interaction-response">
+                <!-- AI response will be displayed here -->
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Stellar Guidance. All rights reserved.</p>
+    </footer>
 
     <script src="scripts/script.js"></script>
 </body>
