@@ -3,145 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Virtual Interior Design Service</title>
+    <title>AI Security Agent - Advanced Threat Detection & Monitoring</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>AI Security Agent</span>
+            </div>
+            <ul>
+                <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#threats"><i class="fas fa-exclamation-triangle"></i> Threats</a></li>
+                <li><a href="#monitoring"><i class="fas fa-eye"></i> Monitoring</a></li>
+                <li><a href="#analytics"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="user-info">
+                <span class="status-indicator online"></span>
+                <span>Admin</span>
+            </div>
+        </div>
     </nav>
 
-    <header id="home">
-        <h1>Welcome to AI Virtual Interior Design</h1>
-        <p>Your dream space, designed by AI</p>
-    </header>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We use advanced AI technology to help you design your dream space. Our service offers personalized interior design solutions that cater to your unique tastes and preferences.</p>
-        <div class="team">
-            <h3>Meet Our Team</h3>
-            <div class="team-member">
-                <img src="team1.jpg" alt="Team Member 1">
-                <p>John Doe, Lead Designer</p>
+    <main>
+        <header id="dashboard">
+            <div class="header-content">
+                <h1>AI Security Dashboard</h1>
+                <p>Real-time threat detection and security monitoring powered by advanced AI</p>
+                <div class="system-status">
+                    <div class="status-item">
+                        <i class="fas fa-server"></i>
+                        <span>System: <span class="status-online">Online</span></span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Protection: <span class="status-active">Active</span></span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Uptime: <span id="uptime">00:00:00</span></span>
+                    </div>
+                </div>
             </div>
-            <div class="team-member">
-                <img src="team2.jpg" alt="Team Member 2">
-                <p>Jane Smith, AI Specialist</p>
-            </div>
-            <div class="team-member">
-                <img src="team3.jpg" alt="Team Member 3">
-                <p>Emily Johnson, Project Manager</p>
-            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Security Metrics -->
+            <section class="metrics-section">
+                <h2><i class="fas fa-chart-bar"></i> Security Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon threat">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Active Threats</h3>
+                            <p class="metric-value" id="active-threats">0</p>
+                            <p class="metric-change positive">-12% from yesterday</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon blocked">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Blocked Attacks</h3>
+                            <p class="metric-value" id="blocked-attacks">1,247</p>
+                            <p class="metric-change positive">+8% from yesterday</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon scan">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Scans Today</h3>
+                            <p class="metric-value" id="scans-today">2,891</p>
+                            <p class="metric-change neutral">+2% from yesterday</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon score">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Security Score</h3>
+                            <p class="metric-value" id="security-score">94</p>
+                            <p class="metric-change positive">+3 points</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-time Monitoring -->
+            <section class="monitoring-section">
+                <h2><i class="fas fa-eye"></i> Real-time Monitoring</h2>
+                <div class="monitoring-grid">
+                    <div class="monitor-card">
+                        <h3>Network Traffic</h3>
+                        <div class="traffic-chart" id="network-chart">
+                            <canvas id="networkCanvas"></canvas>
+                        </div>
+                        <div class="traffic-stats">
+                            <div class="stat">
+                                <span class="label">Incoming:</span>
+                                <span class="value" id="incoming-traffic">1.2 GB/s</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Outgoing:</span>
+                                <span class="value" id="outgoing-traffic">856 MB/s</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="monitor-card">
+                        <h3>System Resources</h3>
+                        <div class="resource-bars">
+                            <div class="resource-item">
+                                <span>CPU Usage</span>
+                                <div class="progress-bar">
+                                    <div class="progress" id="cpu-usage" style="width: 45%"></div>
+                                </div>
+                                <span class="percentage">45%</span>
+                            </div>
+                            <div class="resource-item">
+                                <span>Memory Usage</span>
+                                <div class="progress-bar">
+                                    <div class="progress" id="memory-usage" style="width: 62%"></div>
+                                </div>
+                                <span class="percentage">62%</span>
+                            </div>
+                            <div class="resource-item">
+                                <span>Disk Usage</span>
+                                <div class="progress-bar">
+                                    <div class="progress" id="disk-usage" style="width: 78%"></div>
+                                </div>
+                                <span class="percentage">78%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Threat Intelligence -->
+            <section class="threats-section" id="threats">
+                <h2><i class="fas fa-exclamation-triangle"></i> Threat Intelligence</h2>
+                <div class="threats-container">
+                    <div class="threat-feed">
+                        <h3>Recent Threats</h3>
+                        <div class="threat-list" id="threat-list">
+                            <div class="threat-item high">
+                                <div class="threat-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="threat-content">
+                                    <h4>DDoS Attack Detected</h4>
+                                    <p>Multiple IP addresses attempting to flood the server</p>
+                                    <span class="threat-time">2 minutes ago</span>
+                                </div>
+                                <div class="threat-status">
+                                    <span class="status-badge blocked">Blocked</span>
+                                </div>
+                            </div>
+                            <div class="threat-item medium">
+                                <div class="threat-icon">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <div class="threat-content">
+                                    <h4>Suspicious Login Attempt</h4>
+                                    <p>Failed login from unknown IP: 192.168.1.100</p>
+                                    <span class="threat-time">15 minutes ago</span>
+                                </div>
+                                <div class="threat-status">
+                                    <span class="status-badge investigating">Investigating</span>
+                                </div>
+                            </div>
+                            <div class="threat-item low">
+                                <div class="threat-icon">
+                                    <i class="fas fa-bug"></i>
+                                </div>
+                                <div class="threat-content">
+                                    <h4>Malware Scan Complete</h4>
+                                    <p>No threats found in system scan</p>
+                                    <span class="threat-time">1 hour ago</span>
+                                </div>
+                                <div class="threat-status">
+                                    <span class="status-badge clean">Clean</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="threat-map">
+                        <h3>Global Threat Map</h3>
+                        <div class="map-container" id="threat-map">
+                            <div class="map-placeholder">
+                                <i class="fas fa-globe"></i>
+                                <p>Interactive threat map loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Analysis -->
+            <section class="ai-section">
+                <h2><i class="fas fa-brain"></i> AI Analysis</h2>
+                <div class="ai-grid">
+                    <div class="ai-card">
+                        <h3>Behavioral Analysis</h3>
+                        <div class="ai-content">
+                            <div class="ai-metric">
+                                <span class="label">Anomaly Detection:</span>
+                                <span class="value">98.5% Accuracy</span>
+                            </div>
+                            <div class="ai-metric">
+                                <span class="label">False Positives:</span>
+                                <span class="value">0.2%</span>
+                            </div>
+                            <div class="ai-metric">
+                                <span class="label">Response Time:</span>
+                                <span class="value">0.3s</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-card">
+                        <h3>Predictive Analytics</h3>
+                        <div class="ai-content">
+                            <div class="prediction-item">
+                                <span class="prediction-label">Next Attack Window:</span>
+                                <span class="prediction-value">2-4 hours</span>
+                            </div>
+                            <div class="prediction-item">
+                                <span class="prediction-label">Risk Level:</span>
+                                <span class="prediction-value low-risk">Low</span>
+                            </div>
+                            <div class="prediction-item">
+                                <span class="prediction-label">Recommended Action:</span>
+                                <span class="prediction-value">Monitor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="actions-section">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-btn primary" onclick="runFullScan()">
+                        <i class="fas fa-search"></i>
+                        <span>Run Full Scan</span>
+                    </button>
+                    <button class="action-btn secondary" onclick="updateThreatDatabase()">
+                        <i class="fas fa-download"></i>
+                        <span>Update Database</span>
+                    </button>
+                    <button class="action-btn warning" onclick="backupSystem()">
+                        <i class="fas fa-save"></i>
+                        <span>Backup System</span>
+                    </button>
+                    <button class="action-btn danger" onclick="emergencyLockdown()">
+                        <i class="fas fa-lock"></i>
+                        <span>Emergency Lockdown</span>
+                    </button>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Virtual Room Design</li>
-            <li>3D Visualization</li>
-            <li>Personalized Design Recommendations</li>
-            <li>Furniture and Decor Suggestions</li>
-            <li>Color Scheme Planning</li>
-            <li>Space Optimization</li>
-        </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="living-room.jpg" style="width:100%">
-                <div class="text">Living Room Design</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="bedroom.jpg" style="width:100%">
-                <div class="text">Bedroom Design</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="kitchen.jpg" style="width:100%">
-                <div class="text">Kitchen Design</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-            <p>"AI Virtual Interior Design transformed my living room into a modern paradise. Highly recommended!"</p>
-            <p>- Sarah Williams</p>
-        </div>
-        <div class="testimonial">
-            <p>"The AI recommendations were spot on. I love my new bedroom design!"</p>
-            <p>- Mark Brown</p>
-        </div>
-        <div class="testimonial">
-            <p>"Fantastic service and beautiful designs. The 3D visualization helped me see the potential of my space."</p>
-            <p>- Lisa White</p>
-        </div>
-    </section>
-
-    <section id="blog">
-        <h2>Our Blog</h2>
-        <article class="blog-post">
-            <h3>How AI is Revolutionizing Interior Design</h3>
-            <p>Discover how artificial intelligence is transforming the world of interior design and helping people create their dream spaces.</p>
-            <a href="#">Read more</a>
-        </article>
-        <article class="blog-post">
-            <h3>Top 10 Interior Design Trends for 2024</h3>
-            <p>Stay ahead of the curve with our top picks for the latest interior design trends of the year.</p>
-            <a href="#">Read more</a>
-        </article>
-    </section>
-
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>How does the AI design process work?</h3>
-            <p>Our AI analyzes your preferences and provides personalized design recommendations based on your inputs.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Can I see a 3D visualization of my space?</h3>
-            <p>Yes, we offer 3D visualizations to help you see the potential of your space before making any changes.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How much does the service cost?</h3>
-            <p>Our pricing varies depending on the complexity of the project. Contact us for a personalized quote.</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us to start designing your dream space today.</p>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 AI Virtual Interior Design. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 AI Security Agent. Advanced threat detection and monitoring system.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#support">Support</a>
+            </div>
+        </div>
     </footer>
 
     <script src="scripts.js"></script>
